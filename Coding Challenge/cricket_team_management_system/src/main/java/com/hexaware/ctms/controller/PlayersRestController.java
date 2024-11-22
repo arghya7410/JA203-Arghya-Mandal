@@ -30,9 +30,10 @@ public class PlayersRestController {
     public Players addPlayer(@Valid @RequestBody PlayersDto playerDto) {
         return playerService.addPlayer(playerDto);
     }
-	@PutMapping("/update")
-    public Players updatePlayer(@Valid @RequestBody PlayersDto playerDto) {
-        return playerService.addPlayer(playerDto);
+	@PutMapping("/update/{playerId}")
+    public Players updatePlayer(@PathVariable int playerId, @Valid @RequestBody PlayersDto playerDto) {
+		playerDto.setPlayerId(playerId);
+		return playerService.updatePlayer(playerDto);
     }
 	@GetMapping("/getbyid/{playerId}")
 	public Players getPlayerById(@PathVariable int playerId) {
