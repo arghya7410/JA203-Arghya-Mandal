@@ -1,5 +1,7 @@
 package com.hexaware.ctms.entity;
-
+/*@Author: Arghya Mandal
+* Date: 2024-11-22
+*/
 import jakarta.persistence.Column;
 /*@Author: Arghya Mandal
 * Date: 2024-11-22
