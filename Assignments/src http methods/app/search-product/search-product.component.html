@@ -1,0 +1,26 @@
+<form class="form-inline"   #formData="ngForm"  (ngSubmit)="searchByProductName(formData.value)">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="pname"  ngModel  >
+  <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form>
+<div *ngIf="productList.length > 0" class="container my-4">
+  <h3 class="mb-3">Product List</h3>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{ product.id }}</td>
+          <td>{{ product.pname }}</td>
+          <td>{{ product.price | currency:'INR' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

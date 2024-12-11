@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to Angular by Arghya</h1>
+  <form #empForm="ngForm" class="container col-lg-5" (ngSubmit)="getFormData(empForm.value)">
+    <div class="form-group">
+      <label for="eid">Employee ID</label><input type="number" class="form-control" id="eid" name="eid" ngModel #eidControl="ngModel" required>
+      <span class="text-danger" *ngIf="eidControl.touched && eidControl.invalid" >Eid is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="ename">Employee Name</label><input type="text" class="form-control" id="ename" name="ename" ngModel #enameControl="ngModel" required>
+      <span class="text-danger" *ngIf="enameControl.touched && enameControl.invalid" >Ename is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="sal">Salary</label><input type="number" class="form-control" id="sal" name="salary" ngModel #salControl="ngModel" required>
+      <span class="text-danger" *ngIf="salControl.touched && salControl.invalid" >Salary is mandatory</span>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="empForm.invalid">Submit</button>
+  </form>
+  <br>
+  <div *ngIf="emp" class="container col-lg-5">
+    <h2>Submitted Data:</h2>
+    <p>Employee ID: {{ emp.eid }}</p>
+    <p>Employee Name: {{ emp.ename }}</p>
+    <p>Salary: {{ emp.salary }}</p>
+  </div>
+</body>
+</html>

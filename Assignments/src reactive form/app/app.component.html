@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to Angular by Arghya</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="container col-lg-5">
+    <div class="form-group">
+      <label for="eid">Employee ID</label><input type="number" class="form-control" id="eid" name="eid" formControlName="eid" [ngClass]="{'is-invalid':submitted && f['eid'].errors}">
+      <span class="text-danger" *ngIf="submitted && f['eid'].errors?.['required']" >Eid is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="ename">Employee Name</label><input type="text" class="form-control" id="ename" name="ename" formControlName="ename" [ngClass]="{'is-invalid':submitted && f['ename'].errors}">
+      <span class="text-danger" *ngIf="submitted && f['ename'].errors?.['required']" >Ename is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="sal">Salary</label><input type="number" class="form-control" id="sal" name="salary" formControlName="salary" [ngClass]="{'is-invalid':submitted && f['salary'].errors}">
+      <span class="text-danger" *ngIf="submitted && f['salary'].errors?.['required']" >Salary is mandatory</span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  <br>
+  <div *ngIf="submitted" class="container col-lg-5">
+    <p><strong>Employee ID:</strong> {{empData.eid}}</p>
+    <p><strong>Employee Name:</strong> {{empData.ename}}</p>
+    <p><strong>Salary:</strong> {{empData.salary}}</p>
+  </div>
+</body>
+</html>

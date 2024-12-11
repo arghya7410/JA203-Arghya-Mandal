@@ -1,0 +1,23 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a routerLink="/"
+      ><h1 class="navbar-brand">{{ title }}</h1></a
+    >
+    <ul class="navbar-nav  flex-row">
+      <li class="nav-item">
+        <a class="nav-link px-2" routerLink="/" 
+          >Player List</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2" routerLink="/add" 
+          >Add Player</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Router Outlet -->
+<router-outlet></router-outlet>

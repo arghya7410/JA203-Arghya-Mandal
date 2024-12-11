@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>App Component</h1>
+  <a routerLink="/home">Home</a> <br>
+  <a routerLink="/contact">Contact</a> <br>
+  <a routerLink="/about">About</a> <br>
+  <a routerLink="/user/{{username}}/{{password}}">User Profile</a>
+  <!-- Here content will be rendered -->
+  <router-outlet></router-outlet>
+</body>
+</html>

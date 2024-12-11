@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to Angular by Arghya</h1>
+  <!-- String Interpolation -->
+  <p [ngStyle]="dynamicStyles">User Name: {{name}}</p>
+  <span [ngClass]="{'isBold': true}" appCardHover>User Name: {{name}}. This span is using custom directive which will turn the background color red</span> <br> <br>
+  <!-- Two way data binding -->
+  UserName: <input type="text" name="name" id="name" [(ngModel)]="name">
+  <p>Title: {{title}}</p>
+  <!-- Property binding -->
+  City: <input type="text" name="city" id="city" [value]="city"> <br> <br>
+  <!-- Event binding -->
+  <button type="button" (click)="display()">Display</button>
+  <!-- NgNonBindable -->
+  <p ngNonBindable>Number: {{number}}</p>
+  <app-hello></app-hello>
+  <img  height="200" width="200" [src]="imgUrl" alt="angular logo">
+  <br>
+  <br>
+  <!-- Angular Directive -->
+  <div *ngIf="true">NGIF Directive</div> <!-- *ngIf -->
+  <div [ngSwitch]="count">                <!-- *ngSwitch -->
+  <div *ngSwitchCase="1">One</div>
+  <div *ngSwitchCase="2">Two</div>
+  <div *ngSwitchCase="3">Three</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
+Enter Course: <input type="text" name="course" id="course" [(ngModel)]="course">
+<div [ngSwitch]="course">
+  <div *ngSwitchCase="'Angular'">Angular</div>
+  <div *ngSwitchCase="'React'">React</div>
+  <div *ngSwitchCase="'Vue'">Vue</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
+<!-- ngFor -->
+<ul *ngFor = "let num of array; let i = index">
+  <li>{{i}}: {{num}}</li>
+</ul>
+<!-- Pipes -->
+<p>Uppercase title: {{title | uppercase}}</p>
+<p>Lowercase title: {{title | lowercase}}</p>
+<p>Titlecase name: {{name | titlecase}}</p>
+<p>Number through the pipe: {{fractionNumber | number}}</p>
+<p>Number through the pipe: {{fractionNumber | number:'1.2-5'}}</p>
+<p>Date through the pipe: {{currentDate | date:'fullDate'}}</p>
+<p>Percentage through the pipe: {{0.25 | percent}}</p>
+<p>Currency through the pipe: {{price | currency:'INR'}}</p>
+<p>Multiply through the pipe: {{number | multiply: 2}}</p>
+</body>
+</html>
