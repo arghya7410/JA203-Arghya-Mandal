@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player, NewPlayer } from '../models/player.model';
+import { Player } from '../models/player.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class PlayerService {
     return this.http.get<Player>(`${this.apiUrl}/getbyid/${playerId}`);
   }
 
-  addPlayer(player: NewPlayer): Observable<Player> {
+  addPlayer(player: Player): Observable<Player> {
     return this.http.post<Player>(`${this.apiUrl}/add`, player);
   }
 
